@@ -106,12 +106,9 @@ int main(int argc, char **argv)
         {
             if (event.xbutton.button == 1)
             {
-                        event.xbutton.x,
-                        event.xbutton.y);
-
-                        struct node *point = NULL;
-                        point = create_node(event.xbutton.x, event.xbutton.y);
-                        Append(head, point);
+                struct node *point = NULL;
+                point = create_node(event.xbutton.x, event.xbutton.y);
+                Append(head, point);
             }
             break;
         }
