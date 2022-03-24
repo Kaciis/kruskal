@@ -88,10 +88,10 @@ int main(int argc, char **argv)
 
     XSetLineAttributes(display, gc, 2, 0, 0, 0); // 2 = thickness
 
-    myFont = XLoadQueryFont(display, "-misc-fixed-medium-r-normal--9-90-75-75-c-60-iso10646-1");
+    myFont = XLoadQueryFont(display, "micro");
+    
     while (1)
     {
-
         XAllowEvents(display, AsyncPointer, CurrentTime);
 
         XNextEvent(display, &event);
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
         while (tmp->next != NULL)
         {
             tmp = tmp->next;
-            XFillRectangle(display, window, gc, tmp->x, tmp->y, 10, 10);
+            XFillRectangle(display, window, gc, tmp->x-5, tmp->y-5, 10, 10);
             // printf("x:%i\ty:%i\n", tmp->x, tmp->y);
         }
 
