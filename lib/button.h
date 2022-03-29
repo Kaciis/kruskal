@@ -3,7 +3,7 @@
 #include "color.h"
 #include "trim.h"
 
-void DrawButton(Display *display, Drawable window, int x, int y, int width, int height, char *text, XEvent event)
+void DrawButton(Display *display, Drawable window,int appMode, int x, int y, int width, int height, char *text, XEvent event, void (*f)(int))
 {
     bool pressed = false;
     if (event.xbutton.y < 105)
@@ -37,6 +37,8 @@ void DrawButton(Display *display, Drawable window, int x, int y, int width, int 
                     if (event.xbutton.x > x && event.xbutton.x < x + width)
                     {
                         // event button press
+                        
+                        f(appMode);
                         pressed = false;
                     }
                 }
