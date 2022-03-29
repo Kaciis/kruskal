@@ -30,6 +30,61 @@ typedef struct edgeData
     node_edge *head;
 } edgeData;
 
+struct node_edge *headEdges = NULL;
+struct node_edge *sorted = NULL;
+
+void sortedInsert(struct node_edge *newnode)
+{
+    /* Special case for the head end */
+    if (sorted == NULL || sorted->edge.weight >= newnode->edge.weight)
+    {
+        newnode->next = sorted;
+        sorted = newnode;
+    }
+    else
+    {
+        struct node_edge *current = sorted;
+        /* Locate the node before the point of insertion
+         */
+        // while ((current = current->next) != NULL && current->next->edge.weight < newnode->edge.weight)
+        // {
+        //     printf("%i\n", current->edge.weight);
+        // } 
+        while (current->next != NULL && current->next->edge.weight < newnode->edge.weight)
+        {
+            current = current->next;
+        }
+        newnode->next = current->next;
+        current->next = newnode;
+    }
+}
+
+void insertionsort()
+{
+
+    struct node_edge *current = headEdges;
+
+    printf("here 1\n");
+    // Traverse the given linked list and insert every
+    // node to sorted
+    while (current != NULL)
+    {
+        printf("here 2+\n");
+        // Store next for next iteration
+        struct node_edge *next = current->next;
+
+        // insert current in sorted linked list
+        sortedInsert(current);
+
+        // Update current
+        current = next;
+    }
+    printf("here 3\n");
+    // Update head to point to sorted linked list
+    headEdges = sorted;
+    printf("here 4\n");
+}
+
 edgeData choose(node_point *pointNode, int number, node_point *head_point, node_edge *head_edge);
 int main(int argc, char **argv)
 {
@@ -37,7 +92,6 @@ int main(int argc, char **argv)
     int noOfButtons = 2;
 
     struct node_point *headPoints = NULL;
-    struct node_edge *headEdges = NULL;
 
     char *hello = "Hello world!";
 
@@ -173,6 +227,14 @@ int main(int argc, char **argv)
                         }
                     }
                 }
+                if (headEdges != NULL && headEdges->next != NULL)
+                {
+                    printList(headEdges);
+
+                    insertionsort(headEdges);
+                    printf("here 5\n");
+                    sorted = NULL;
+                }
             }
             break;
         }
@@ -181,12 +243,15 @@ int main(int argc, char **argv)
         DrawButton(display, window, 1, 90, 20, 60, 60, "spojovat", event, changeAppMode);
         DrawButton(display, window, 2, 160, 20, 60, 60, "hledat", event, changeAppMode);
 
+        printf("here 6\n");
+        printList(headEdges);
         DrawEdges(headEdges, display, window);
 
+        printf("here 7\n");
         DrawPoints(headPoints, display, window);
 
         XDrawLine(display, window, gc2, 10, 100, windowInfo.width - 10, 100);
-
+        // sleep(1);
 
         // printf("%i", appMode);
     }

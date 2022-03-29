@@ -21,6 +21,7 @@ void DrawEdges(node_edge *head, Display *display, Drawable window)
 
     if (head != NULL)
     {
+        ;
         node_edge *tmp = head;
         gc = XCreateGC(display, window, valuemask, &values);
         XSetLineAttributes(display, gc, 2, 0, 0, 0); // 2 = thickness
