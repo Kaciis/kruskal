@@ -49,7 +49,7 @@ void sortedInsert(struct node_edge *newnode)
         // while ((current = current->next) != NULL && current->next->edge.weight < newnode->edge.weight)
         // {
         //     printf("%i\n", current->edge.weight);
-        // } 
+        // }
         while (current->next != NULL && current->next->edge.weight < newnode->edge.weight)
         {
             current = current->next;
@@ -64,12 +64,11 @@ void insertionsort()
 
     struct node_edge *current = headEdges;
 
-    printf("here 1\n");
     // Traverse the given linked list and insert every
     // node to sorted
     while (current != NULL)
     {
-        printf("here 2+\n");
+
         // Store next for next iteration
         struct node_edge *next = current->next;
 
@@ -79,10 +78,9 @@ void insertionsort()
         // Update current
         current = next;
     }
-    printf("here 3\n");
+
     // Update head to point to sorted linked list
     headEdges = sorted;
-    printf("here 4\n");
 }
 
 edgeData choose(node_point *pointNode, int number, node_point *head_point, node_edge *head_edge);
@@ -232,7 +230,7 @@ int main(int argc, char **argv)
                     printList(headEdges);
 
                     insertionsort(headEdges);
-                    printf("here 5\n");
+
                     sorted = NULL;
                 }
             }
@@ -243,11 +241,9 @@ int main(int argc, char **argv)
         DrawButton(display, window, 1, 90, 20, 60, 60, "spojovat", event, changeAppMode);
         DrawButton(display, window, 2, 160, 20, 60, 60, "hledat", event, changeAppMode);
 
-        printf("here 6\n");
         printList(headEdges);
         DrawEdges(headEdges, display, window);
 
-        printf("here 7\n");
         DrawPoints(headPoints, display, window);
 
         XDrawLine(display, window, gc2, 10, 100, windowInfo.width - 10, 100);
