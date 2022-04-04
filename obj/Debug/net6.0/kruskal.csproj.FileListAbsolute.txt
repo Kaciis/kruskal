@@ -1,0 +1,15 @@
+/home/kacis/projects/kruskal/bin/Debug/net6.0/kruskal
+/home/kacis/projects/kruskal/bin/Debug/net6.0/kruskal.deps.json
+/home/kacis/projects/kruskal/bin/Debug/net6.0/kruskal.runtimeconfig.json
+/home/kacis/projects/kruskal/bin/Debug/net6.0/kruskal.dll
+/home/kacis/projects/kruskal/bin/Debug/net6.0/kruskal.pdb
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.csproj.AssemblyReference.cache
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.GeneratedMSBuildEditorConfig.editorconfig
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.AssemblyInfoInputs.cache
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.AssemblyInfo.cs
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.csproj.CoreCompileInputs.cache
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.dll
+/home/kacis/projects/kruskal/obj/Debug/net6.0/refint/kruskal.dll
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.pdb
+/home/kacis/projects/kruskal/obj/Debug/net6.0/kruskal.genruntimeconfig.cache
+/home/kacis/projects/kruskal/obj/Debug/net6.0/ref/kruskal.dll
